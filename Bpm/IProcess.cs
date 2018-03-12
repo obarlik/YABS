@@ -9,23 +9,69 @@ namespace PmLibrary
     /// </summary>
     public interface IProcess
     {
-        string Code { get; set; }
+        /// <summary>
+        /// Serial number 
+        /// </summary>
+        int ProcessNo { get; set; }
+
+
+        /// <summary>
+        /// Name 
+        /// </summary>
         string Name { get; set; }
 
-        IStep StartStep { get; set; }
-        IStep FinishStep { get; set; }
 
+        /// <summary>
+        /// Start step of this process
+        /// </summary>
+        IStep StartStep { get; set; }
+        
+        
+        /// <summary>
+        /// Notes for this step, if any.
+        /// </summary>
         string Notes { get; set; }
 
+
+        /// <summary>
+        /// Revision information of this step.
+        /// </summary>
         string RevisedBy { get; set; }
+
+
+        /// <summary>
+        /// Revision time of this step
+        /// </summary>
         DateTime RevisionTime { get; set; }
 
+
+        /// <summary>
+        /// Revision number of this step
+        /// </summary>
         int Revision { get; set; }
 
+
+        /// <summary>
+        /// Major version number
+        /// </summary>
         int VersionMajor { get; set; }
+
+
+        /// <summary>
+        /// Minor version number
+        /// </summary>
         int VersionMinor { get; set; }
 
+
+        /// <summary>
+        /// Valid from date/time
+        /// </summary>
         DateTime ValidFrom { get; set; }
+
+
+        /// <summary>
+        /// Velid to date/time
+        /// </summary>
         DateTime? ValidTo { get; set; }
 
 
