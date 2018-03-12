@@ -5,13 +5,13 @@ using System.Text;
 namespace PmLibrary
 {
     /// <summary>
-    /// Returns value of expression's result
+    /// Starts another process and returns immediately.
     /// </summary>
-    public interface IPmReturn : IPmProcessStep
+    public interface IStartProcess : IStep
     {
         /// <summary>
-        /// C# expression to be evaluated
+        /// New process to be started
         /// </summary>
-        string Expression { get; set; }
+        IProcess NewProcess { get; set; }
     }
 }

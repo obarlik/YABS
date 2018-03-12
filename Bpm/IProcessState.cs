@@ -7,8 +7,14 @@ namespace PmLibrary
     /// <summary>
     /// Declares a running/finalized process state.
     /// </summary>
-    public interface IPmProcessState
+    public interface IProcessState
     {
+        /// <summary>
+        /// Process definition of this state
+        /// </summary>
+        IProcess Process { get; set; }
+
+
         /// <summary>
         /// Current status
         /// </summary>
@@ -34,17 +40,26 @@ namespace PmLibrary
 
 
         /// <summary>
-        /// Last step state information
+        /// Current step's state information
         /// </summary>
-        IPmProcessStepState LastStep { get; }
+        IStepState StepState { get; }
         
 
         /// <summary>
-        /// 
+        /// Step state stack
         /// </summary>
-        Stack<IPmProcessStepState> Stack { get; }
+        Stack<IStepState> Stack { get; }
 
 
-        Queue<IPmProcessStepState> History { get; }
+        /// <summary>
+        /// Step state history
+        /// </summary>
+        IEnumerable<IStepState> History { get; }
+
+        
+        /// <summary>
+        /// Process variable values
+        /// </summary>
+        IDictionary<string, object> Variables { get; }
     }
 }

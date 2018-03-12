@@ -7,13 +7,13 @@ namespace PmLibrary
     /// <summary>
     /// Defines a process
     /// </summary>
-    public interface IPmProcess
+    public interface IProcess
     {
         string Code { get; set; }
         string Name { get; set; }
 
-        IPmProcessStep StartStep { get; set; }
-        IPmProcessStep FinishStep { get; set; }
+        IStep StartStep { get; set; }
+        IStep FinishStep { get; set; }
 
         string Notes { get; set; }
 
@@ -27,5 +27,19 @@ namespace PmLibrary
 
         DateTime ValidFrom { get; set; }
         DateTime? ValidTo { get; set; }
+
+
+        /// <summary>
+        /// Variable definitions for this process
+        /// </summary>
+        IDictionary<string, IVariable> Variables { get; }
+
+
+        /// <summary>
+        /// Returns next step, that best fits current state
+        /// </summary>
+        /// <param name="baseStep"></param>
+        /// <returns></returns>
+        IStep GetNextStep();
     }
 }

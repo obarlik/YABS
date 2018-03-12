@@ -5,7 +5,7 @@ namespace PmLibrary
     /// <summary>
     /// Defines how information is displayed for a process step
     /// </summary>
-    public interface IPmPosition
+    public interface IPosition
     {
         /// <summary>
         /// Position identifier code

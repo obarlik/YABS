@@ -5,13 +5,13 @@ using System.Text;
 namespace PmLibrary
 {
     /// <summary>
-    /// Exports value to process state
+    /// Returns value of expression's result
     /// </summary>
-    public interface IPmExportValue : IPmProcessStep
+    public interface IReturn : IStep
     {
         /// <summary>
-        /// Local variable name to be exported
+        /// C# expression to be evaluated and assign to result
         /// </summary>
-        string ValueName { get; set; }
+        string Expression { get; set; }
     }
 }

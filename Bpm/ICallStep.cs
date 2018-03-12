@@ -6,13 +6,13 @@ namespace PmLibrary
 {
     /// <summary>
     /// Calls subprocess, sets current step's result value,
-    /// and continues with next route
+    /// returns upon completion.
     /// </summary>
-    public interface IPmCallSubProcess : IPmProcessStep
+    public interface ICallStep : IStep
     {
         /// <summary>
         /// Subprocess to be called
         /// </summary>
-        IPmProcess SubProcess { get; set; }
+        IProcess SubProcess { get; set; }
     }
 }

@@ -7,18 +7,12 @@ namespace PmLibrary
     /// <summary>
     /// Process step
     /// </summary>
-    public interface IPmProcessStep
+    public interface IStep
     {
-        /// <summary>
-        /// Parent process
-        /// </summary>
-        IPmProcess Process { get; set; }
-
-
         /// <summary>
         /// Associated position definition, if any
         /// </summary>
-        IPmPosition Position { get; set; }
+        IPosition Position { get; set; }
 
 
         /// <summary>
@@ -28,18 +22,22 @@ namespace PmLibrary
 
         
         /// <summary>
-        /// Step evaluation function
+        /// Step evaluation function definition
         /// </summary>
-        /// <param name="processState"></param>
+        /// <param name="processState">Current process state</param>
         /// <returns></returns>
-        string Run(IPmProcessState processState);
+        object Run(IProcessState processState);
 
 
         /// <summary>
-        /// Returns next route according to result value.
+        /// Variable definitions for this step
         /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        IPmProcessStep GetNextStep(string result);
+        IDictionary<string, IVariable> Variables { get; }
+
+
+        /// <summary>
+        /// Route definitions for this step
+        /// </summary>
+        IList<IRoute> Routes { get; }
     }
 }
