@@ -10,7 +10,7 @@ namespace PmLibrary
     public interface IProcess
     {
         /// <summary>
-        /// Serial number 
+        /// Process serial number 
         /// </summary>
         int ProcessNo { get; set; }
 

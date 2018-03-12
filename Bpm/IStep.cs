@@ -10,6 +10,12 @@ namespace PmLibrary
     public interface IStep
     {
         /// <summary>
+        /// Step serial number
+        /// </summary>
+        int StepNo { get; set; }
+
+
+        /// <summary>
         /// Associated position definition, if any
         /// </summary>
         IPosition Position { get; set; }

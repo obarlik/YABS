@@ -8,7 +8,7 @@ namespace PmLibrary
     /// Calls subprocess, sets current step's result value,
     /// returns upon completion.
     /// </summary>
-    public interface ICallStep : IStep
+    public interface ICallerStep : IStep
     {
         /// <summary>
         /// Subprocess to be called

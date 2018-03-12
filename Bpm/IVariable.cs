@@ -31,11 +31,5 @@ namespace PmLibrary
         /// Export variable value to upper step/process
         /// </summary>
         bool IsOutput { get; set; }
-
-
-        /// <summary>
-        /// Variable's value
-        /// </summary>
-        object Value { get; set; }
     }
 }
