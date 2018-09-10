@@ -82,6 +82,14 @@ namespace PmLibrary
 
 
         /// <summary>
+        /// Process instance creation function, assigns parent process instance, if any.
+        /// </summary>
+        /// <param name="parentProcessInstance">Parent process instance</param>
+        /// <returns>Created process instance</returns>
+        IProcessInstance NewInstance(IProcessInstance parentProcessInstance = null);
+
+
+        /// <summary>
         /// Returns next step, that best fits current state
         /// </summary>
         /// <param name="baseStep"></param>

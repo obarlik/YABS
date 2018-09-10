@@ -7,8 +7,14 @@ namespace PmLibrary
     /// <summary>
     /// Declares a running/finalized step's state data
     /// </summary>
-    public interface IStepState
+    public interface IStepInstance
     {
+        /// <summary>
+        /// Runs under this process instance.
+        /// </summary>
+        IProcessInstance ProcessInstance { get; set; }
+
+
         /// <summary>
         /// Step definition of this state
         /// </summary>
@@ -18,25 +24,25 @@ namespace PmLibrary
         /// <summary>
         /// State's current status
         /// </summary>
-        PmStatus Status { get; set; }
+        ProcessingStatus Status { get; set; }
 
         
         /// <summary>
         /// Step start time
         /// </summary>
-        DateTime StepStartedAt { get; set; }
+        DateTime StartedAt { get; set; }
 
 
         /// <summary>
         /// Step finish time
         /// </summary>
-        DateTime? StepFinishedAt { get; set; }
+        DateTime? FinishedAt { get; set; }
 
 
         /// <summary>
         /// Step duration time
         /// </summary>
-        TimeSpan StepDuration { get; }
+        TimeSpan? Duration { get; }
 
 
         /// <summary>

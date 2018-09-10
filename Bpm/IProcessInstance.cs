@@ -5,12 +5,18 @@ using System.Text;
 namespace PmLibrary
 {
     /// <summary>
-    /// Declares a running/finalized process state.
+    /// Declares a running/finalized process instance.
     /// </summary>
-    public interface IProcessState
+    public interface IProcessInstance
     {
         /// <summary>
-        /// Process definition of this state
+        /// Runs under this parent process, if any
+        /// </summary>
+        IProcessInstance ParentProcessInstance { get; set; }
+       
+
+        /// <summary>
+        /// Process definition of this instance
         /// </summary>
         IProcess Process { get; set; }
 
@@ -18,7 +24,7 @@ namespace PmLibrary
         /// <summary>
         /// Current status
         /// </summary>
-        PmStatus Status { get; set; }
+        ProcessingStatus Status { get; set; }
 
 
         /// <summary>
@@ -36,25 +42,25 @@ namespace PmLibrary
         /// <summary>
         /// Elapsed time until start time.
         /// </summary>
-        TimeSpan Duration { get; }
+        TimeSpan? Duration { get; }
 
 
         /// <summary>
-        /// Current step's state information
+        /// Current step's instance
         /// </summary>
-        IStepState StepState { get; }
+        IStepInstance StepInstance { get; }
         
 
         /// <summary>
-        /// Step state stack
+        /// Step instance stack
         /// </summary>
-        Stack<IStepState> Stack { get; }
+        Stack<IStepInstance> Stack { get; }
 
 
         /// <summary>
-        /// Step state history
+        /// Step instance history
         /// </summary>
-        IEnumerable<IStepState> History { get; }
+        IEnumerable<IStepInstance> History { get; }
 
         
         /// <summary>

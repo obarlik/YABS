@@ -8,7 +8,7 @@ namespace PmLibrary
     /// Value assigning step type. 
     /// Assigns expression result value to a variable
     /// </summary>
-    public interface IAssignmentStep : IStep
+    public interface IAssignment : IStep
     {
         /// <summary>
         /// Value name to be assigned

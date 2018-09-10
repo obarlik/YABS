@@ -28,11 +28,11 @@ namespace PmLibrary
 
         
         /// <summary>
-        /// Step evaluation function definition
+        /// Step instance creation function, assigns process instance.
         /// </summary>
-        /// <param name="processState">Current process state</param>
+        /// <param name="processInstance">Current process state</param>
         /// <returns></returns>
-        object Run(IProcessState processState);
+        IStepInstance NewInstance(IProcessInstance processInstance);
 
 
         /// <summary>
